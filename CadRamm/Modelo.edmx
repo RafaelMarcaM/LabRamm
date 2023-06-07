@@ -1,0 +1,314 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="LabRammModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nit" Type="bigint" Nullable="false" />
+          <Property Name="razonSocial" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="telefono" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="usuarioRegistro" Type="varchar" MaxLength="100" />
+          <Property Name="registroActivo" Type="bit" />
+          <Property Name="fechaRegistro" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Producto">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="codigo" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="unidadMedida" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="existencias" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="precioVenta" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="usuarioRegistro" Type="varchar" MaxLength="100" />
+          <Property Name="registroActivo" Type="bit" />
+          <Property Name="fechaRegistro" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Proveedor">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nit" Type="bigint" Nullable="false" />
+          <Property Name="razonSocial" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="direccion" Type="varchar" MaxLength="250" />
+          <Property Name="telefono" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="usuarioRegistro" Type="varchar" MaxLength="100" />
+          <Property Name="registroActivo" Type="bit" />
+          <Property Name="fechaRegistro" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="usuario" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="clave" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="usuarioRegistro" Type="varchar" MaxLength="100" />
+          <Property Name="registroActivo" Type="bit" />
+          <Property Name="fechaRegistro" Type="datetime" />
+        </EntityType>
+        <Function Name="paClienteListar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="parametro" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="paProductoListar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="parametro" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="paProveedorListar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="parametro" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="paUsuarioListar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="parametro" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="LabRammModelStoreContainer">
+          <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Producto" EntityType="Self.Producto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Proveedor" EntityType="Self.Proveedor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LabRammModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nit" Type="Int64" Nullable="false" />
+          <Property Name="razonSocial" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="telefono" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="usuarioRegistro" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="registroActivo" Type="Boolean" />
+          <Property Name="fechaRegistro" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Producto">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="codigo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="unidadMedida" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="existencias" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="precioVenta" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="usuarioRegistro" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="registroActivo" Type="Boolean" />
+          <Property Name="fechaRegistro" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Proveedor">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nit" Type="Int64" Nullable="false" />
+          <Property Name="razonSocial" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="direccion" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="telefono" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="usuarioRegistro" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="registroActivo" Type="Boolean" />
+          <Property Name="fechaRegistro" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="usuario1" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="clave" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="usuarioRegistro" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="registroActivo" Type="Boolean" />
+          <Property Name="fechaRegistro" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityContainer Name="LabRammEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Cliente" EntityType="Self.Cliente" />
+          <EntitySet Name="Producto" EntityType="Self.Producto" />
+          <EntitySet Name="Proveedor" EntityType="Self.Proveedor" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" />
+          <FunctionImport Name="paClienteListar" ReturnType="Collection(LabRammModel.paClienteListar_Result)">
+            <Parameter Name="parametro" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="paProductoListar" ReturnType="Collection(LabRammModel.paProductoListar_Result)">
+            <Parameter Name="parametro" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="paProveedorListar" ReturnType="Collection(LabRammModel.paProveedorListar_Result)">
+            <Parameter Name="parametro" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="paUsuarioListar" ReturnType="Collection(LabRammModel.paUsuarioListar_Result)">
+            <Parameter Name="parametro" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="paClienteListar_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="Int64" Name="nit" Nullable="false" />
+          <Property Type="String" Name="razonSocial" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="usuarioRegistro" Nullable="true" MaxLength="100" />
+          <Property Type="DateTime" Name="fechaRegistro" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="paProductoListar_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="codigo" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="descripcion" Nullable="false" MaxLength="250" />
+          <Property Type="String" Name="unidadMedida" Nullable="false" MaxLength="20" />
+          <Property Type="Decimal" Name="existencias" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="precioVenta" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="usuarioRegistro" Nullable="true" MaxLength="100" />
+          <Property Type="DateTime" Name="fechaRegistro" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="paProveedorListar_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="Int64" Name="nit" Nullable="false" />
+          <Property Type="String" Name="razonSocial" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="direccion" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="telefono" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="usuarioRegistro" Nullable="true" MaxLength="100" />
+          <Property Type="DateTime" Name="fechaRegistro" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="paUsuarioListar_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="usuario" Nullable="false" MaxLength="12" />
+          <Property Type="String" Name="clave" Nullable="false" MaxLength="250" />
+          <Property Type="String" Name="usuarioRegistro" Nullable="true" MaxLength="100" />
+          <Property Type="DateTime" Name="fechaRegistro" Nullable="true" Precision="23" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LabRammModelStoreContainer" CdmEntityContainer="LabRammEntities">
+          <EntitySetMapping Name="Cliente">
+            <EntityTypeMapping TypeName="LabRammModel.Cliente">
+              <MappingFragment StoreEntitySet="Cliente">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nit" ColumnName="nit" />
+                <ScalarProperty Name="razonSocial" ColumnName="razonSocial" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="usuarioRegistro" ColumnName="usuarioRegistro" />
+                <ScalarProperty Name="registroActivo" ColumnName="registroActivo" />
+                <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Producto">
+            <EntityTypeMapping TypeName="LabRammModel.Producto">
+              <MappingFragment StoreEntitySet="Producto">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="unidadMedida" ColumnName="unidadMedida" />
+                <ScalarProperty Name="existencias" ColumnName="existencias" />
+                <ScalarProperty Name="precioVenta" ColumnName="precioVenta" />
+                <ScalarProperty Name="usuarioRegistro" ColumnName="usuarioRegistro" />
+                <ScalarProperty Name="registroActivo" ColumnName="registroActivo" />
+                <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Proveedor">
+            <EntityTypeMapping TypeName="LabRammModel.Proveedor">
+              <MappingFragment StoreEntitySet="Proveedor">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nit" ColumnName="nit" />
+                <ScalarProperty Name="razonSocial" ColumnName="razonSocial" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="usuarioRegistro" ColumnName="usuarioRegistro" />
+                <ScalarProperty Name="registroActivo" ColumnName="registroActivo" />
+                <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuario">
+            <EntityTypeMapping TypeName="LabRammModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="usuario1" ColumnName="usuario" />
+                <ScalarProperty Name="clave" ColumnName="clave" />
+                <ScalarProperty Name="usuarioRegistro" ColumnName="usuarioRegistro" />
+                <ScalarProperty Name="registroActivo" ColumnName="registroActivo" />
+                <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="paClienteListar" FunctionName="LabRammModel.Store.paClienteListar">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LabRammModel.paClienteListar_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nit" ColumnName="nit" />
+                <ScalarProperty Name="razonSocial" ColumnName="razonSocial" />
+                <ScalarProperty Name="usuarioRegistro" ColumnName="usuarioRegistro" />
+                <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="paProductoListar" FunctionName="LabRammModel.Store.paProductoListar">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LabRammModel.paProductoListar_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="unidadMedida" ColumnName="unidadMedida" />
+                <ScalarProperty Name="existencias" ColumnName="existencias" />
+                <ScalarProperty Name="precioVenta" ColumnName="precioVenta" />
+                <ScalarProperty Name="usuarioRegistro" ColumnName="usuarioRegistro" />
+                <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="paProveedorListar" FunctionName="LabRammModel.Store.paProveedorListar">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LabRammModel.paProveedorListar_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nit" ColumnName="nit" />
+                <ScalarProperty Name="razonSocial" ColumnName="razonSocial" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="usuarioRegistro" ColumnName="usuarioRegistro" />
+                <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="paUsuarioListar" FunctionName="LabRammModel.Store.paUsuarioListar">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LabRammModel.paUsuarioListar_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="usuario" ColumnName="usuario" />
+                <ScalarProperty Name="clave" ColumnName="clave" />
+                <ScalarProperty Name="usuarioRegistro" ColumnName="usuarioRegistro" />
+                <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

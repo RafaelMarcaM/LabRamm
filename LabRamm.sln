@@ -5,6 +5,10 @@ VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadRamm", "CadRamm\CadRamm.csproj", "{356AA6CB-8F2E-4B4B-AA16-C5992F533B38}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClnRamm", "ClnRamm\ClnRamm.csproj", "{EC8356C4-9244-4B89-B47D-FCCA1FA06FDA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CpRamm", "CpRamm\CpRamm.csproj", "{745B4A2F-617A-4522-A372-7C99FB42462E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{356AA6CB-8F2E-4B4B-AA16-C5992F533B38}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{356AA6CB-8F2E-4B4B-AA16-C5992F533B38}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{356AA6CB-8F2E-4B4B-AA16-C5992F533B38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC8356C4-9244-4B89-B47D-FCCA1FA06FDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC8356C4-9244-4B89-B47D-FCCA1FA06FDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC8356C4-9244-4B89-B47D-FCCA1FA06FDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC8356C4-9244-4B89-B47D-FCCA1FA06FDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{745B4A2F-617A-4522-A372-7C99FB42462E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{745B4A2F-617A-4522-A372-7C99FB42462E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{745B4A2F-617A-4522-A372-7C99FB42462E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{745B4A2F-617A-4522-A372-7C99FB42462E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

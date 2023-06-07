@@ -1,0 +1,10 @@
+D:\Documentos\Universidad\LabRamm\CpRamm\bin\Debug\CpRamm.exe.config
+D:\Documentos\Universidad\LabRamm\CpRamm\bin\Debug\CpRamm.exe
+D:\Documentos\Universidad\LabRamm\CpRamm\bin\Debug\CpRamm.pdb
+D:\Documentos\Universidad\LabRamm\CpRamm\obj\Debug\CpRamm.csproj.AssemblyReference.cache
+D:\Documentos\Universidad\LabRamm\CpRamm\obj\Debug\CpRamm.csproj.SuggestedBindingRedirects.cache
+D:\Documentos\Universidad\LabRamm\CpRamm\obj\Debug\CpRamm.Properties.Resources.resources
+D:\Documentos\Universidad\LabRamm\CpRamm\obj\Debug\CpRamm.csproj.GenerateResource.cache
+D:\Documentos\Universidad\LabRamm\CpRamm\obj\Debug\CpRamm.csproj.CoreCompileInputs.cache
+D:\Documentos\Universidad\LabRamm\CpRamm\obj\Debug\CpRamm.exe
+D:\Documentos\Universidad\LabRamm\CpRamm\obj\Debug\CpRamm.pdb
