@@ -1,0 +1,15 @@
+D:\Documentos\Universidad\LabRamm\ClnRamm\obj\Debug\ClnRamm.csproj.AssemblyReference.cache
+D:\Documentos\Universidad\LabRamm\ClnRamm\obj\Debug\ClnRamm.csproj.CoreCompileInputs.cache
+D:\Documentos\Universidad\LabRamm\ClnRamm\bin\Debug\ClnRamm.dll.config
+D:\Documentos\Universidad\LabRamm\ClnRamm\bin\Debug\ClnRamm.dll
+D:\Documentos\Universidad\LabRamm\ClnRamm\bin\Debug\ClnRamm.pdb
+D:\Documentos\Universidad\LabRamm\ClnRamm\bin\Debug\CadRamm.dll
+D:\Documentos\Universidad\LabRamm\ClnRamm\bin\Debug\EntityFramework.dll
+D:\Documentos\Universidad\LabRamm\ClnRamm\bin\Debug\EntityFramework.SqlServer.dll
+D:\Documentos\Universidad\LabRamm\ClnRamm\bin\Debug\CadRamm.pdb
+D:\Documentos\Universidad\LabRamm\ClnRamm\bin\Debug\CadRamm.dll.config
+D:\Documentos\Universidad\LabRamm\ClnRamm\bin\Debug\EntityFramework.xml
+D:\Documentos\Universidad\LabRamm\ClnRamm\bin\Debug\EntityFramework.SqlServer.xml
+D:\Documentos\Universidad\LabRamm\ClnRamm\obj\Debug\ClnRamm.csproj.CopyComplete
+D:\Documentos\Universidad\LabRamm\ClnRamm\obj\Debug\ClnRamm.dll
+D:\Documentos\Universidad\LabRamm\ClnRamm\obj\Debug\ClnRamm.pdb

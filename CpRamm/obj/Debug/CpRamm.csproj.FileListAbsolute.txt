@@ -8,3 +8,15 @@ D:\Documentos\Universidad\LabRamm\CpRamm\obj\Debug\CpRamm.csproj.GenerateResourc
 D:\Documentos\Universidad\LabRamm\CpRamm\obj\Debug\CpRamm.csproj.CoreCompileInputs.cache
 D:\Documentos\Universidad\LabRamm\CpRamm\obj\Debug\CpRamm.exe
 D:\Documentos\Universidad\LabRamm\CpRamm\obj\Debug\CpRamm.pdb
+D:\Documentos\Universidad\LabRamm\CpRamm\obj\Debug\CpRamm.FrmProducto.resources
+D:\Documentos\Universidad\LabRamm\CpRamm\bin\Debug\CadRamm.dll
+D:\Documentos\Universidad\LabRamm\CpRamm\bin\Debug\ClnRamm.dll
+D:\Documentos\Universidad\LabRamm\CpRamm\bin\Debug\EntityFramework.dll
+D:\Documentos\Universidad\LabRamm\CpRamm\bin\Debug\EntityFramework.SqlServer.dll
+D:\Documentos\Universidad\LabRamm\CpRamm\bin\Debug\CadRamm.pdb
+D:\Documentos\Universidad\LabRamm\CpRamm\bin\Debug\CadRamm.dll.config
+D:\Documentos\Universidad\LabRamm\CpRamm\bin\Debug\ClnRamm.pdb
+D:\Documentos\Universidad\LabRamm\CpRamm\bin\Debug\ClnRamm.dll.config
+D:\Documentos\Universidad\LabRamm\CpRamm\bin\Debug\EntityFramework.xml
+D:\Documentos\Universidad\LabRamm\CpRamm\bin\Debug\EntityFramework.SqlServer.xml
+D:\Documentos\Universidad\LabRamm\CpRamm\obj\Debug\CpRamm.csproj.CopyComplete
