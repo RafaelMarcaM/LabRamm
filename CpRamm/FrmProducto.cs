@@ -18,6 +18,9 @@ namespace CpRamm
         public FrmProducto()
         {
             InitializeComponent();
+            cbxUnidadMedida.KeyPress += Util.onlyNumbers;
+            nudExistencias.KeyPress += Util.onlyNumbers;
+            nudPrecioVenta.KeyPress += Util.onlyNumbers;
         }
 
         private void Producto_Load(object sender, EventArgs e)
@@ -92,7 +95,7 @@ namespace CpRamm
                 producto.unidadMedida = cbxUnidadMedida.Text;
                 producto.existencias = Convert.ToDecimal(nudExistencias.Text);
                 producto.precioVenta = Convert.ToDecimal(nudPrecioVenta.Text);
-                //producto.usuarioRegistro = Util.usuario.usuario;
+                producto.usuarioRegistro = Util.usuario.usuario1;
 
                 if (esNuevo)
                 {
@@ -143,7 +146,7 @@ namespace CpRamm
             }
             if (nudExistencias.Value < 0)
             {
-                erpExistencias.SetError(nudExistencias, "El campo Saldo debe ser mayor a 0");
+                erpExistencias.SetError(nudExistencias, "El campo Existencias debe ser mayor a 0");
                 esValido = false;
             }
             if (string.IsNullOrEmpty(nudPrecioVenta.Text))
@@ -177,7 +180,7 @@ namespace CpRamm
                 MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (dialog == DialogResult.OK)
             {
-                ProductoCln.eliminar(id/*, Util.usuario.usuario*/);
+                ProductoCln.eliminar(id, Util.usuario.usuario1);
                 listar();
                 MessageBox.Show($"Producto dado de baja correctamente", "::: Diesel Sur - Mensaje :::",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);

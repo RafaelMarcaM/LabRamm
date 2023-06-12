@@ -20,3 +20,11 @@ D:\Documentos\Universidad\LabRamm\CpRamm\bin\Debug\ClnRamm.dll.config
 D:\Documentos\Universidad\LabRamm\CpRamm\bin\Debug\EntityFramework.xml
 D:\Documentos\Universidad\LabRamm\CpRamm\bin\Debug\EntityFramework.SqlServer.xml
 D:\Documentos\Universidad\LabRamm\CpRamm\obj\Debug\CpRamm.csproj.CopyComplete
+D:\Documentos\Universidad\LabRamm\CpRamm\obj\Debug\CpRamm.FrmAutenticacion.resources
+D:\Documentos\Universidad\LabRamm\CpRamm\obj\Debug\CpRamm.FrmPrincipal.resources
+D:\Documentos\Universidad\LabRamm\CpRamm\obj\Debug\CpRamm.exe.licenses
+D:\Documentos\Universidad\LabRamm\CpRamm\bin\Debug\C1.Win.4.dll
+D:\Documentos\Universidad\LabRamm\CpRamm\bin\Debug\C1.Win.C1Ribbon.4.dll
+D:\Documentos\Universidad\LabRamm\CpRamm\bin\Debug\C1.Win.4.xml
+D:\Documentos\Universidad\LabRamm\CpRamm\bin\Debug\C1.Win.C1Ribbon.4.xml
+D:\Documentos\Universidad\LabRamm\CpRamm\obj\Debug\CpRamm.FrmUsuario.resources

@@ -31,6 +31,7 @@ namespace CadRamm
         public virtual DbSet<Producto> Producto { get; set; }
         public virtual DbSet<Proveedor> Proveedor { get; set; }
         public virtual DbSet<Usuario> Usuario { get; set; }
+        public virtual DbSet<Empleado> Empleado { get; set; }
     
         public virtual ObjectResult<paClienteListar_Result> paClienteListar(string parametro)
         {

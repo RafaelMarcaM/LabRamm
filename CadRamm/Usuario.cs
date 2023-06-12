@@ -20,5 +20,8 @@ namespace CadRamm
         public string usuarioRegistro { get; set; }
         public Nullable<bool> registroActivo { get; set; }
         public Nullable<System.DateTime> fechaRegistro { get; set; }
+        public int idEmpleado { get; set; }
+    
+        public virtual Empleado Empleado { get; set; }
     }
 }

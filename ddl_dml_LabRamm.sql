@@ -1,5 +1,5 @@
 ﻿-- DDL
-CREATE DATABASE LabRamm;
+CREATE DATABASE;
 USE [master]
 GO
 CREATE LOGIN [usrlabramm] WITH PASSWORD=N'12345678',
@@ -44,11 +44,13 @@ CREATE TABLE Proveedor(
 );
 CREATE TABLE Usuario(
 	id INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+	idEmpleado INT NOT NULL,
 	usuario VARCHAR(12)NOT NULL,
 	clave VARCHAR(250) NOT NULL,
 	usuarioRegistro VARCHAR(100) NULL DEFAULT SUSER_NAME(),
 	registroActivo BIT NULL DEFAULT 1,
 	fechaRegistro DATETIME NULL DEFAULT GETDATE()
+	CONSTRAINT fk_Usuario_Empleado FOREIGN KEY(idEmpleado) REFERENCES Empleado(id)
 );
 CREATE TABLE Cliente(
 	id INT NOT NULL PRIMARY KEY IDENTITY(1,1),
@@ -59,7 +61,19 @@ CREATE TABLE Cliente(
 	registroActivo BIT NULL DEFAULT 1,
 	fechaRegistro DATETIME NULL DEFAULT GETDATE()
 );
-
+CREATE TABLE Empleado(
+	id INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+	cedulaIdentidad VARCHAR(15) NOT NULL,
+	nombre VARCHAR(30) NOT NULL,
+	primerApellido VARCHAR(30) NOT NULL,
+	segundoApellido VARCHAR(30) NOT NULL,
+	direccion VARCHAR(250) NOT NULL,
+	celular BIGINT NOT NULL,
+	cargo VARCHAR(50) NOT NULL,
+	usuarioRegistro VARCHAR(100) NULL DEFAULT SUSER_NAME(),
+	registroActivo BIT NULL DEFAULT 1,
+	fechaRegistro DATETIME NULL DEFAULT GETDATE()
+);
 -- DML
 INSERT INTO Producto(codigo, descripcion, unidadMedida, existencias, precioVenta)
 VALUES ('BR028', 'Buje de bronze de 28mm', 'unidad', 15, 37);
@@ -87,11 +101,15 @@ EXEC paClienteListar ''
 
 CREATE PROC paUsuarioListar @parametro VARCHAR(50)
 AS
-	SELECT id, usuario, clave, usuarioRegistro, fechaRegistro 
-	FROM Usuario
-	WHERE registroActivo = 1 AND
-			usuario LIKE '%'+REPLACE(@parametro,' ','%')+'%';
-
+  SELECT u.idEmpleado, u.id as idUsuario, e.cedulaIdentidad, e.nombre,
+		 e.primerApellido, e.segundoApellido, e.direccion, e.celular,
+		 e.cargo, u.usuario, u.usuarioRegistro, u.fechaRegistro
+  FROM Empleado e
+  INNER JOIN Usuario u ON e.id=u.idEmpleado
+  WHERE e.registroActivo=1 AND u.registroActivo=1 AND
+		e.cedulaIdentidad+e.nombre+e.primerApellido+e.segundoApellido+u.usuario 
+			LIKE '%'+REPLACE(@parametro,' ','%')+'%'
+			
 EXEC paUsuarioListar ''
 
 CREATE PROC paProveedorListar @parametro VARCHAR(50)

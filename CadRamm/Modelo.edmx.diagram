@@ -9,6 +9,8 @@
         <EntityTypeShape EntityType="LabRammModel.Producto" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="LabRammModel.Proveedor" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="LabRammModel.Usuario" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabRammModel.Empleado" Width="1.5" PointX="0.75" PointY="8.375" />
+        <AssociationConnector Association="LabRammModel.fk_Usuario_Empleado" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

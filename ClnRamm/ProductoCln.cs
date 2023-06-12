@@ -35,12 +35,12 @@ namespace ClnRamm
             }
         }
 
-        public static int eliminar(int id/*, string usuarioRegistro*/)
+        public static int eliminar(int id, string usuarioRegistro)
         {            using (var contexto = new LabRammEntities())
             {
                 var existente = contexto.Producto.Find(id);
                 existente.registroActivo = false;
-                //existente.usuarioRegistro = usuarioRegistro;
+                existente.usuarioRegistro = usuarioRegistro;
                 return contexto.SaveChanges();
             }
         }
