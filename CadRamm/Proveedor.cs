@@ -14,6 +14,12 @@ namespace CadRamm
     
     public partial class Proveedor
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Proveedor()
+        {
+            this.Compra = new HashSet<Compra>();
+        }
+    
         public int id { get; set; }
         public long nit { get; set; }
         public string razonSocial { get; set; }
@@ -22,5 +28,8 @@ namespace CadRamm
         public string usuarioRegistro { get; set; }
         public Nullable<bool> registroActivo { get; set; }
         public Nullable<System.DateTime> fechaRegistro { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Compra> Compra { get; set; }
     }
 }

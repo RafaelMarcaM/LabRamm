@@ -12,27 +12,22 @@ namespace CadRamm
     using System;
     using System.Collections.Generic;
     
-    public partial class Producto
+    public partial class Venta
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Producto()
+        public Venta()
         {
-            this.CompraDetalle = new HashSet<CompraDetalle>();
             this.VentaDetalle = new HashSet<VentaDetalle>();
         }
     
         public int id { get; set; }
-        public string codigo { get; set; }
-        public string descripcion { get; set; }
-        public string unidadMedida { get; set; }
-        public decimal existencias { get; set; }
-        public decimal precioVenta { get; set; }
-        public string usuarioRegistro { get; set; }
-        public Nullable<bool> registroActivo { get; set; }
-        public Nullable<System.DateTime> fechaRegistro { get; set; }
+        public int idUsuario { get; set; }
+        public int idCliente { get; set; }
+        public int transaccion { get; set; }
+        public System.DateTime fecha { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CompraDetalle> CompraDetalle { get; set; }
+        public virtual Cliente Cliente { get; set; }
+        public virtual Usuario Usuario { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<VentaDetalle> VentaDetalle { get; set; }
     }

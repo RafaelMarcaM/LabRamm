@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmUsuario));
             this.gbxDatos = new System.Windows.Forms.GroupBox();
             this.cbxCargo = new System.Windows.Forms.ComboBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
@@ -99,7 +100,7 @@
             this.gbxDatos.Controls.Add(this.lblNombre);
             this.gbxDatos.Controls.Add(this.txtCedulaIdentidad);
             this.gbxDatos.Controls.Add(this.lblCedulaIdentidad);
-            this.gbxDatos.Location = new System.Drawing.Point(146, 314);
+            this.gbxDatos.Location = new System.Drawing.Point(94, 366);
             this.gbxDatos.Name = "gbxDatos";
             this.gbxDatos.Size = new System.Drawing.Size(826, 202);
             this.gbxDatos.TabIndex = 19;
@@ -336,7 +337,7 @@
             // 
             this.btnCerrar.Image = global::CpRamm.Properties.Resources._006_cancel;
             this.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCerrar.Location = new System.Drawing.Point(17, 470);
+            this.btnCerrar.Location = new System.Drawing.Point(871, 314);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(101, 46);
             this.btnCerrar.TabIndex = 6;
@@ -349,7 +350,7 @@
             // 
             this.btnEliminar.Image = global::CpRamm.Properties.Resources._012_trash;
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(17, 366);
+            this.btnEliminar.Location = new System.Drawing.Point(575, 314);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(101, 46);
             this.btnEliminar.TabIndex = 4;
@@ -362,7 +363,7 @@
             // 
             this.btnEditar.Image = global::CpRamm.Properties.Resources._013_pencil;
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditar.Location = new System.Drawing.Point(17, 418);
+            this.btnEditar.Location = new System.Drawing.Point(278, 314);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(101, 46);
             this.btnEditar.TabIndex = 5;
@@ -431,7 +432,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(984, 519);
+            this.ClientSize = new System.Drawing.Size(984, 556);
             this.Controls.Add(this.gbxDatos);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnEliminar);
@@ -443,6 +444,7 @@
             this.Controls.Add(this.gbxParametros);
             this.Controls.Add(this.lblTitulo);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(14, 75);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;

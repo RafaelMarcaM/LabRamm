@@ -25,6 +25,7 @@ namespace CpRamm
 
         private void Producto_Load(object sender, EventArgs e)
         {
+            Size = new Size(1000, 402);
             listar();
         }
         private void listar()
@@ -47,6 +48,7 @@ namespace CpRamm
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             esNuevo = true;
+            Size = new Size(1000, 595);
             txtCodigo.Focus();
             limpiar();
         }
@@ -54,6 +56,8 @@ namespace CpRamm
         private void btnEditar_Click(object sender, EventArgs e)
         {
             esNuevo = false;
+            Size = new Size(1000, 595);
+
 
             int index = dgvLista.CurrentCell.RowIndex;
             int id = Convert.ToInt32(dgvLista.Rows[index].Cells["id"].Value);
@@ -67,6 +71,7 @@ namespace CpRamm
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            Size = new Size(1000, 402);
             limpiar();
         }
 

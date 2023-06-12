@@ -8,9 +8,20 @@
         <EntityTypeShape EntityType="LabRammModel.Cliente" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="LabRammModel.Producto" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="LabRammModel.Proveedor" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabRammModel.Usuario" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabRammModel.Empleado" Width="1.5" PointX="0.75" PointY="8.375" />
+        <EntityTypeShape EntityType="LabRammModel.Usuario" Width="1.5" PointX="7" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabRammModel.Empleado" Width="1.5" PointX="9.125" PointY="0.875" />
         <AssociationConnector Association="LabRammModel.fk_Usuario_Empleado" />
+        <EntityTypeShape EntityType="LabRammModel.Compra" Width="1.5" PointX="5.5" PointY="4.5" />
+        <EntityTypeShape EntityType="LabRammModel.CompraDetalle" Width="1.5" PointX="3.75" PointY="4.5" />
+        <EntityTypeShape EntityType="LabRammModel.Venta" Width="1.5" PointX="7.625" PointY="4.625" />
+        <EntityTypeShape EntityType="LabRammModel.VentaDetalle" Width="1.5" PointX="9.625" PointY="4.625" />
+        <AssociationConnector Association="LabRammModel.fk_Venta_Cliente" />
+        <AssociationConnector Association="LabRammModel.fk_Compra_Proveedor" />
+        <AssociationConnector Association="LabRammModel.fk_CompraDetalle_Compra" />
+        <AssociationConnector Association="LabRammModel.fk_CompraDetalle_Producto" />
+        <AssociationConnector Association="LabRammModel.fk_VentaDetalle_Producto" />
+        <AssociationConnector Association="LabRammModel.fk_Venta_Usuario" />
+        <AssociationConnector Association="LabRammModel.fk_VentaDetalle_Venta" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

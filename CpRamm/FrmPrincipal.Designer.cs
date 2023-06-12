@@ -43,6 +43,16 @@
             this.btnUsuario = new C1.Win.C1Ribbon.RibbonButton();
             this.ribbonTopToolBar1 = new C1.Win.C1Ribbon.RibbonTopToolBar();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ribbonTab3 = new C1.Win.C1Ribbon.RibbonTab();
+            this.ribbonGroup2 = new C1.Win.C1Ribbon.RibbonGroup();
+            this.ribbonButton1 = new C1.Win.C1Ribbon.RibbonButton();
+            this.ribbonButton3 = new C1.Win.C1Ribbon.RibbonButton();
+            this.ribbonTab4 = new C1.Win.C1Ribbon.RibbonTab();
+            this.ribbonGroup3 = new C1.Win.C1Ribbon.RibbonGroup();
+            this.ribbonButton4 = new C1.Win.C1Ribbon.RibbonButton();
+            this.ribbonGroup4 = new C1.Win.C1Ribbon.RibbonGroup();
+            this.ribbonButton5 = new C1.Win.C1Ribbon.RibbonButton();
+            this.ribbonButton6 = new C1.Win.C1Ribbon.RibbonButton();
             ((System.ComponentModel.ISupportInitialize)(this.c1Ribbon1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -59,6 +69,8 @@
             this.c1Ribbon1.Size = new System.Drawing.Size(968, 154);
             this.c1Ribbon1.Tabs.Add(this.ribbonTab1);
             this.c1Ribbon1.Tabs.Add(this.ribbonTab2);
+            this.c1Ribbon1.Tabs.Add(this.ribbonTab3);
+            this.c1Ribbon1.Tabs.Add(this.ribbonTab4);
             this.c1Ribbon1.TopToolBarHolder = this.ribbonTopToolBar1;
             this.c1Ribbon1.VisualStyle = C1.Win.C1Ribbon.VisualStyle.Office2010Silver;
             // 
@@ -81,6 +93,7 @@
             // ribbonTab1
             // 
             this.ribbonTab1.Groups.Add(this.ribbonGroup1);
+            this.ribbonTab1.Groups.Add(this.ribbonGroup4);
             this.ribbonTab1.Name = "ribbonTab1";
             this.ribbonTab1.Text = "Catalogo";
             // 
@@ -148,6 +161,74 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // ribbonTab3
+            // 
+            this.ribbonTab3.Groups.Add(this.ribbonGroup2);
+            this.ribbonTab3.Name = "ribbonTab3";
+            this.ribbonTab3.Text = "Clientes";
+            // 
+            // ribbonGroup2
+            // 
+            this.ribbonGroup2.Items.Add(this.ribbonButton1);
+            this.ribbonGroup2.Items.Add(this.ribbonButton3);
+            this.ribbonGroup2.Name = "ribbonGroup2";
+            this.ribbonGroup2.Text = "Clientes y Proveedores";
+            this.ribbonGroup2.DialogLauncherClick += new System.EventHandler(this.ribbonGroup2_DialogLauncherClick);
+            // 
+            // ribbonButton1
+            // 
+            this.ribbonButton1.LargeImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton1.LargeImage")));
+            this.ribbonButton1.Name = "ribbonButton1";
+            this.ribbonButton1.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton1.SmallImage")));
+            this.ribbonButton1.Text = "Clientes";
+            // 
+            // ribbonButton3
+            // 
+            this.ribbonButton3.LargeImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton3.LargeImage")));
+            this.ribbonButton3.Name = "ribbonButton3";
+            this.ribbonButton3.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton3.SmallImage")));
+            this.ribbonButton3.Text = "Proveedores";
+            // 
+            // ribbonTab4
+            // 
+            this.ribbonTab4.Groups.Add(this.ribbonGroup3);
+            this.ribbonTab4.Name = "ribbonTab4";
+            this.ribbonTab4.Text = "Información";
+            // 
+            // ribbonGroup3
+            // 
+            this.ribbonGroup3.Items.Add(this.ribbonButton4);
+            this.ribbonGroup3.Name = "ribbonGroup3";
+            this.ribbonGroup3.Text = "Información";
+            // 
+            // ribbonButton4
+            // 
+            this.ribbonButton4.LargeImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton4.LargeImage")));
+            this.ribbonButton4.Name = "ribbonButton4";
+            this.ribbonButton4.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton4.SmallImage")));
+            this.ribbonButton4.Text = "Acerca de";
+            // 
+            // ribbonGroup4
+            // 
+            this.ribbonGroup4.Items.Add(this.ribbonButton5);
+            this.ribbonGroup4.Items.Add(this.ribbonButton6);
+            this.ribbonGroup4.Name = "ribbonGroup4";
+            this.ribbonGroup4.Text = "Ventas";
+            // 
+            // ribbonButton5
+            // 
+            this.ribbonButton5.LargeImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton5.LargeImage")));
+            this.ribbonButton5.Name = "ribbonButton5";
+            this.ribbonButton5.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton5.SmallImage")));
+            this.ribbonButton5.Text = "Detalle de Ventas";
+            // 
+            // ribbonButton6
+            // 
+            this.ribbonButton6.LargeImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton6.LargeImage")));
+            this.ribbonButton6.Name = "ribbonButton6";
+            this.ribbonButton6.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton6.SmallImage")));
+            this.ribbonButton6.Text = "Detalle de Compras";
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -189,5 +270,15 @@
         private C1.Win.C1Ribbon.RibbonGroup Emp;
         private C1.Win.C1Ribbon.RibbonButton ribbonButton2;
         private C1.Win.C1Ribbon.RibbonButton btnUsuario;
+        private C1.Win.C1Ribbon.RibbonTab ribbonTab3;
+        private C1.Win.C1Ribbon.RibbonGroup ribbonGroup2;
+        private C1.Win.C1Ribbon.RibbonButton ribbonButton1;
+        private C1.Win.C1Ribbon.RibbonButton ribbonButton3;
+        private C1.Win.C1Ribbon.RibbonTab ribbonTab4;
+        private C1.Win.C1Ribbon.RibbonGroup ribbonGroup3;
+        private C1.Win.C1Ribbon.RibbonButton ribbonButton4;
+        private C1.Win.C1Ribbon.RibbonGroup ribbonGroup4;
+        private C1.Win.C1Ribbon.RibbonButton ribbonButton5;
+        private C1.Win.C1Ribbon.RibbonButton ribbonButton6;
     }
 }

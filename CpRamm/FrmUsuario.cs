@@ -25,6 +25,7 @@ namespace CpRamm
         }
         private void FrmUsuario_Load_1(object sender, EventArgs e)
         {
+            Size = new Size(1000, 402);
             listar();
         }
 
@@ -51,11 +52,13 @@ namespace CpRamm
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             esNuevo = true;
+            Size = new Size(1000, 595);
             txtCedulaIdentidad.Focus();
         }
         private void btnEditar_Click_1(object sender, EventArgs e)
         {
             esNuevo = false;
+            Size = new Size(1000, 595);
             txtCedulaIdentidad.Focus();
 
             int index = dgvLista.CurrentCell.RowIndex;
@@ -75,6 +78,7 @@ namespace CpRamm
         }
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            Size = new Size(1000, 402);
             limpiar();
         }
 

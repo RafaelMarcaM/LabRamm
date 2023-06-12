@@ -41,5 +41,10 @@ namespace CpRamm
         {
             new FrmUsuario().ShowDialog();
         }
+
+        private void ribbonGroup2_DialogLauncherClick(object sender, EventArgs e)
+        {
+
+        }
     }
 }

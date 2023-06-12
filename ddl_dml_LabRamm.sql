@@ -16,8 +16,13 @@ GO
 ALTER ROLE [db_owner] ADD MEMBER [usrlabramm]
 GO
 
+DROP TABLE VentaDetalle;
+DROP TABLE Venta;
 DROP TABLE Cliente;
+DROP TABLE CompraDetalle;
+DROP TABLE Compra;
 DROP TABLE Usuario;
+DROP TABLE Empleado;
 DROP TABLE Proveedor;
 DROP TABLE Producto;
 
@@ -73,6 +78,42 @@ CREATE TABLE Empleado(
 	usuarioRegistro VARCHAR(100) NULL DEFAULT SUSER_NAME(),
 	registroActivo BIT NULL DEFAULT 1,
 	fechaRegistro DATETIME NULL DEFAULT GETDATE()
+);
+CREATE TABLE Compra(
+	id INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+	idProveedor INT NOT NULL,
+	transaccion INT NOT NULL,
+	fecha DATE NOT NULL DEFAULT GETDATE(),
+	CONSTRAINT fk_Compra_Proveedor FOREIGN KEY (idProveedor) REFERENCES Proveedor(id)
+);
+CREATE TABLE CompraDetalle(
+	id INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+	idCompra INT NOT NULL,
+	idProducto INT NOT NULL,
+	cantidad DECIMAL NOT NULL CHECK (cantidad > 0),
+	precioUnitario DECIMAL NOT NULL,
+	total DECIMAL NOT NULL
+	CONSTRAINT fk_CompraDetalle_Compra FOREIGN KEY (idCompra) REFERENCES Compra(id),
+	CONSTRAINT fk_CompraDetalle_Producto FOREIGN KEY (idProducto) REFERENCES Producto(id)
+);
+CREATE TABLE Venta(
+	id INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+	idUsuario INT NOT NULL,
+	idCliente INT NOT NULL,
+	transaccion INT NOT NULL,
+	fecha DATE NOT NULL DEFAULT GETDATE(),
+	CONSTRAINT fk_Venta_Usuario FOREIGN KEY (idUsuario) REFERENCES Usuario(id),
+	CONSTRAINT fk_Venta_Cliente FOREIGN KEY (idCliente) REFERENCES Cliente(id)
+);
+CREATE TABLE VentaDetalle(
+	id INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+	idVenta INT NOT NULL,
+	idProducto INT NOT NULL,
+	cantidad DECIMAL NOT NULL CHECK (cantidad > 0),
+	precioUnitario DECIMAL NOT NULL,
+	total DECIMAL NOT NULL,
+	CONSTRAINT fk_VentaDetalle_Venta FOREIGN KEY (idVenta) REFERENCES Venta(id),
+	CONSTRAINT fk_VentaDetalle_Producto FOREIGN KEY (idProducto) REFERENCES Producto(id)
 );
 -- DML
 INSERT INTO Producto(codigo, descripcion, unidadMedida, existencias, precioVenta)
