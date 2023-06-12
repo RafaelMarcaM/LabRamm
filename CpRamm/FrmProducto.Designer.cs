@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblProductos = new System.Windows.Forms.Label();
             this.gbxParametros = new System.Windows.Forms.GroupBox();
             this.dgvLista = new System.Windows.Forms.DataGridView();
@@ -39,21 +40,33 @@
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.gbxDatos = new System.Windows.Forms.GroupBox();
+            this.nudExistencias = new System.Windows.Forms.NumericUpDown();
+            this.cbxUnidadMedida = new System.Windows.Forms.ComboBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.txtPrecioVenta = new System.Windows.Forms.TextBox();
             this.lblPrecioVenta = new System.Windows.Forms.Label();
-            this.txtExistencias = new System.Windows.Forms.TextBox();
             this.lblExistencias = new System.Windows.Forms.Label();
-            this.txtUnidadMedida = new System.Windows.Forms.TextBox();
             this.lblUnidadMedida = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.lblCodigo = new System.Windows.Forms.Label();
+            this.erpCodigo = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erpDescripcion = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erpUnidadMedida = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erpExistencias = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erpPrecioVenta = new System.Windows.Forms.ErrorProvider(this.components);
+            this.nudPrecioVenta = new System.Windows.Forms.NumericUpDown();
             this.gbxParametros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             this.gbxDatos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudExistencias)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpCodigo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpDescripcion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpUnidadMedida)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpExistencias)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpPrecioVenta)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrecioVenta)).BeginInit();
             this.SuspendLayout();
             // 
             // lblProductos
@@ -183,13 +196,13 @@
             // 
             this.gbxDatos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbxDatos.Controls.Add(this.nudPrecioVenta);
+            this.gbxDatos.Controls.Add(this.nudExistencias);
+            this.gbxDatos.Controls.Add(this.cbxUnidadMedida);
             this.gbxDatos.Controls.Add(this.btnCancelar);
             this.gbxDatos.Controls.Add(this.btnGuardar);
-            this.gbxDatos.Controls.Add(this.txtPrecioVenta);
             this.gbxDatos.Controls.Add(this.lblPrecioVenta);
-            this.gbxDatos.Controls.Add(this.txtExistencias);
             this.gbxDatos.Controls.Add(this.lblExistencias);
-            this.gbxDatos.Controls.Add(this.txtUnidadMedida);
             this.gbxDatos.Controls.Add(this.lblUnidadMedida);
             this.gbxDatos.Controls.Add(this.txtDescripcion);
             this.gbxDatos.Controls.Add(this.lblDescripcion);
@@ -201,6 +214,24 @@
             this.gbxDatos.TabIndex = 9;
             this.gbxDatos.TabStop = false;
             this.gbxDatos.Text = "Datos";
+            // 
+            // nudExistencias
+            // 
+            this.nudExistencias.Location = new System.Drawing.Point(150, 116);
+            this.nudExistencias.Name = "nudExistencias";
+            this.nudExistencias.Size = new System.Drawing.Size(281, 24);
+            this.nudExistencias.TabIndex = 12;
+            // 
+            // cbxUnidadMedida
+            // 
+            this.cbxUnidadMedida.FormattingEnabled = true;
+            this.cbxUnidadMedida.Items.AddRange(new object[] {
+            "Unidad",
+            "Juego"});
+            this.cbxUnidadMedida.Location = new System.Drawing.Point(150, 85);
+            this.cbxUnidadMedida.Name = "cbxUnidadMedida";
+            this.cbxUnidadMedida.Size = new System.Drawing.Size(281, 26);
+            this.cbxUnidadMedida.TabIndex = 5;
             // 
             // btnCancelar
             // 
@@ -230,13 +261,6 @@
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // txtPrecioVenta
-            // 
-            this.txtPrecioVenta.Location = new System.Drawing.Point(150, 148);
-            this.txtPrecioVenta.Name = "txtPrecioVenta";
-            this.txtPrecioVenta.Size = new System.Drawing.Size(281, 24);
-            this.txtPrecioVenta.TabIndex = 9;
-            // 
             // lblPrecioVenta
             // 
             this.lblPrecioVenta.AutoSize = true;
@@ -246,13 +270,6 @@
             this.lblPrecioVenta.TabIndex = 8;
             this.lblPrecioVenta.Text = "Precio de Venta :";
             // 
-            // txtExistencias
-            // 
-            this.txtExistencias.Location = new System.Drawing.Point(150, 118);
-            this.txtExistencias.Name = "txtExistencias";
-            this.txtExistencias.Size = new System.Drawing.Size(281, 24);
-            this.txtExistencias.TabIndex = 7;
-            // 
             // lblExistencias
             // 
             this.lblExistencias.AutoSize = true;
@@ -261,13 +278,6 @@
             this.lblExistencias.Size = new System.Drawing.Size(91, 18);
             this.lblExistencias.TabIndex = 6;
             this.lblExistencias.Text = "Existencias :";
-            // 
-            // txtUnidadMedida
-            // 
-            this.txtUnidadMedida.Location = new System.Drawing.Point(150, 88);
-            this.txtUnidadMedida.Name = "txtUnidadMedida";
-            this.txtUnidadMedida.Size = new System.Drawing.Size(281, 24);
-            this.txtUnidadMedida.TabIndex = 5;
             // 
             // lblUnidadMedida
             // 
@@ -310,6 +320,33 @@
             this.lblCodigo.TabIndex = 0;
             this.lblCodigo.Text = "Codigo :";
             // 
+            // erpCodigo
+            // 
+            this.erpCodigo.ContainerControl = this;
+            // 
+            // erpDescripcion
+            // 
+            this.erpDescripcion.ContainerControl = this;
+            // 
+            // erpUnidadMedida
+            // 
+            this.erpUnidadMedida.ContainerControl = this;
+            // 
+            // erpExistencias
+            // 
+            this.erpExistencias.ContainerControl = this;
+            // 
+            // erpPrecioVenta
+            // 
+            this.erpPrecioVenta.ContainerControl = this;
+            // 
+            // nudPrecioVenta
+            // 
+            this.nudPrecioVenta.Location = new System.Drawing.Point(150, 146);
+            this.nudPrecioVenta.Name = "nudPrecioVenta";
+            this.nudPrecioVenta.Size = new System.Drawing.Size(281, 24);
+            this.nudPrecioVenta.TabIndex = 13;
+            // 
             // FrmProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -336,6 +373,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).EndInit();
             this.gbxDatos.ResumeLayout(false);
             this.gbxDatos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudExistencias)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpCodigo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpDescripcion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpUnidadMedida)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpExistencias)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpPrecioVenta)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrecioVenta)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -354,11 +398,8 @@
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.GroupBox gbxDatos;
-        private System.Windows.Forms.TextBox txtPrecioVenta;
         private System.Windows.Forms.Label lblPrecioVenta;
-        private System.Windows.Forms.TextBox txtExistencias;
         private System.Windows.Forms.Label lblExistencias;
-        private System.Windows.Forms.TextBox txtUnidadMedida;
         private System.Windows.Forms.Label lblUnidadMedida;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label lblDescripcion;
@@ -366,6 +407,14 @@
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.ComboBox cbxUnidadMedida;
+        private System.Windows.Forms.NumericUpDown nudExistencias;
+        private System.Windows.Forms.ErrorProvider erpCodigo;
+        private System.Windows.Forms.ErrorProvider erpDescripcion;
+        private System.Windows.Forms.ErrorProvider erpUnidadMedida;
+        private System.Windows.Forms.ErrorProvider erpExistencias;
+        private System.Windows.Forms.ErrorProvider erpPrecioVenta;
+        private System.Windows.Forms.NumericUpDown nudPrecioVenta;
     }
 }
 

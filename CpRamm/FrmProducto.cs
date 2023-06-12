@@ -57,9 +57,9 @@ namespace CpRamm
             var producto = ProductoCln.get(id);
             txtCodigo.Text = producto.codigo;
             txtDescripcion.Text = producto.descripcion;
-            txtUnidadMedida.Text = producto.unidadMedida;
-            txtExistencias.Text = Convert.ToString(producto.existencias);
-            txtPrecioVenta.Text = Convert.ToString(producto.precioVenta);
+            cbxUnidadMedida.Text = producto.unidadMedida;
+            nudExistencias.Value = producto.existencias;
+            nudPrecioVenta.Value = producto.precioVenta;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -84,14 +84,14 @@ namespace CpRamm
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            //if (validar())
+            if (validar())
             {
                 var producto = new Producto();
                 producto.codigo = txtCodigo.Text.Trim();
                 producto.descripcion = txtDescripcion.Text.Trim();
-                producto.unidadMedida = txtUnidadMedida.Text;
-                producto.existencias = Convert.ToDecimal(txtExistencias.Text);
-                producto.precioVenta = Convert.ToDecimal(txtPrecioVenta.Text);
+                producto.unidadMedida = cbxUnidadMedida.Text;
+                producto.existencias = Convert.ToDecimal(nudExistencias.Text);
+                producto.precioVenta = Convert.ToDecimal(nudPrecioVenta.Text);
                 //producto.usuarioRegistro = Util.usuario.usuario;
 
                 if (esNuevo)
@@ -112,59 +112,59 @@ namespace CpRamm
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-        //private bool validar()
-        //{
-        //    bool esValido = true;
-        //    erpCodigo.SetError(txtCodigo, "");
-        //    erpDescripcion.SetError(txtDescripcion, "");
-        //    erpUnidadMedida.SetError(cbxUnidadMedida, "");
-        //    erpSaldo.SetError(nudSaldo, "");
-        //    erpPrecioVenta.SetError(nudPrecioVenta, "");
+        private bool validar()
+        {
+            bool esValido = true;
+            erpCodigo.SetError(txtCodigo, "");
+            erpDescripcion.SetError(txtDescripcion, "");
+            erpUnidadMedida.SetError(cbxUnidadMedida, "");
+            erpExistencias.SetError(nudExistencias, "");
+            erpPrecioVenta.SetError(nudPrecioVenta, "");
 
-        //    if (string.IsNullOrEmpty(txtCodigo.Text))
-        //    {
-        //        erpCodigo.SetError(txtCodigo, "El campo Código es obligatorio");
-        //        esValido = false;
-        //    }
-        //    if (string.IsNullOrEmpty(txtDescripcion.Text))
-        //    {
-        //        erpDescripcion.SetError(txtDescripcion, "El campo Descripción es obligatorio");
-        //        esValido = false;
-        //    }
-        //    if (string.IsNullOrEmpty(cbxUnidadMedida.Text))
-        //    {
-        //        erpUnidadMedida.SetError(cbxUnidadMedida, "El campo Unidad de Media es obligatorio");
-        //        esValido = false;
-        //    }
-        //    if (string.IsNullOrEmpty(nudSaldo.Text))
-        //    {
-        //        erpSaldo.SetError(nudSaldo, "El campo Saldo es obligatorio");
-        //        esValido = false;
-        //    }
-        //    if (nudSaldo.Value < 0)
-        //    {
-        //        erpSaldo.SetError(nudSaldo, "El campo Saldo debe ser mayor a 0");
-        //        esValido = false;
-        //    }
-        //    if (string.IsNullOrEmpty(nudPrecioVenta.Text))
-        //    {
-        //        erpPrecioVenta.SetError(nudPrecioVenta, "El campo Precio de Venta es obligatorio");
-        //        esValido = false;
-        //    }
-        //    if (nudPrecioVenta.Value < 0)
-        //    {
-        //        erpPrecioVenta.SetError(nudPrecioVenta, "El campo Precio de Venta debe ser mayor a 0");
-        //        esValido = false;
-        //    }
-        //    return esValido;
-        //}
+            if (string.IsNullOrEmpty(txtCodigo.Text))
+            {
+                erpCodigo.SetError(txtCodigo, "El campo Código es obligatorio");
+                esValido = false;
+            }
+            if (string.IsNullOrEmpty(txtDescripcion.Text))
+            {
+                erpDescripcion.SetError(txtDescripcion, "El campo Descripción es obligatorio");
+                esValido = false;
+            }
+            if (string.IsNullOrEmpty(cbxUnidadMedida.Text))
+            {
+                erpUnidadMedida.SetError(cbxUnidadMedida, "El campo Unidad de Media es obligatorio");
+                esValido = false;
+            }
+            if (string.IsNullOrEmpty(nudExistencias.Text))
+            {
+                erpExistencias.SetError(nudExistencias, "El campo Existencias es obligatorio");
+                esValido = false;
+            }
+            if (nudExistencias.Value < 0)
+            {
+                erpExistencias.SetError(nudExistencias, "El campo Saldo debe ser mayor a 0");
+                esValido = false;
+            }
+            if (string.IsNullOrEmpty(nudPrecioVenta.Text))
+            {
+                erpPrecioVenta.SetError(nudPrecioVenta, "El campo Precio de Venta es obligatorio");
+                esValido = false;
+            }
+            if (nudPrecioVenta.Value < 0)
+            {
+                erpPrecioVenta.SetError(nudPrecioVenta, "El campo Precio de Venta debe ser mayor a 0");
+                esValido = false;
+            }
+            return esValido;
+        }
         private void limpiar()
         {
             txtCodigo.Text = string.Empty;
             txtDescripcion.Text = string.Empty;
-            txtUnidadMedida.Text = string.Empty;
-            txtExistencias.Text = string.Empty;
-            txtPrecioVenta.Text = string.Empty;
+            cbxUnidadMedida.SelectedIndex = -1;
+            nudExistencias.Value = 0;
+            nudPrecioVenta.Value = 0;
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
